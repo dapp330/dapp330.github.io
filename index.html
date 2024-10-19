@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="./src/love-letter.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding Invitation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add this line to include the Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora&family=Montserrat&family=Sacramento&family=Playfair+Display&family=Pinyon+Script&family=Lobster+Two&family=Assistant&family=Alike+Angular&family=Poppins&family=Ubuntu&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            background-color: #f0f0f0; /* Light gray background */
+            color: #4A4A4A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .page-container {
+            width: 100%;
+            max-width: 480px; /* Adjust this value to your preferred mobile width */
+            min-height: 100vh;
+            background-color: #fff5f5;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+        .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .open-invitation {
+            width: 100%;
+            max-width: 480px;
+        }
+        h1, h2, h3 {
+            font-family: 'Great Vibes', cursive;
+            color: #3e506f;
+        }
+        .btn-custom {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .card-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .card-text {
+            font-family: 'Poppins', sans-serif;
+        }
+        .open-invitation h1 {
+            font-family: 'Sacramento', cursive;
+        }
+        .open-invitation p {
+            font-family: 'Assistant', sans-serif;
+        }
+        .section {
+            padding: 50px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .header {
+            background-color: #efede6;
+        }
+        .couple-info {
+            background-color: #fbf1ea;
+        }
+        .event-details {
+            background-color: #dfeae4;
+        }
+        .open-invitation-text {
+            color: #f3d6c2!important;
+        }
+        .btn-custom {
+            background-color: #f3d6c2;
+            color: #4A4A4A;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #f2e1cd;
+            transform: scale(1.05);
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f3d6c2;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .social-icon {
+            font-size: 24px;
+            color: #f3d6c2;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #f2e1cd;
+        }
+        .open-invitation {
+            background-image: url('src/1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+        .open-invitation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .open-invitation h1, .open-invitation p, .open-invitation button {
+            position: relative;
+            z-index: 1;
+        }
+        .open-invitation h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .open-invitation p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .open-invitation button {
+            font-size: 1.2rem;
+            padding: 10px 30px;
+            background-color: #f3d6c2;
+            color: #4A4A4A;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .open-invitation button:hover {
+            background-color: #f2e1cd;
+            color: #4A4A4A;
+        }
+        /* Adjust carousel images */
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="open-invitation" id="openInvitation">
+            <h1 class="open-invitation-text">Raihan & Meiva's Wedding</h1>
+            <p id="guestGreeting">We cordially invite you to celebrate our love</p>
+            <button onclick="openInvitation()">Open Invitation</button>
+        </div>
+
+        <div class="container-fluid d-none" id="invitation">
+            <section id="intro" class="section text-center">
+                <h1 class="display-1 mb-4 pt-5">Raihan & Meiva's Wedding Invitation</h1>
+                <div class="arabic-text mb-4">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</div>
+                <p class="lead mb-5">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them, and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."</p>
+                <p>- QS. Ar-Rum : 21 -</p>
+                
+            </section>
+
+            <section id="couple" class="section">
+                <div class="row">
+                    <div class="col-md-6 text-center mb-4">
+                        <img src="./src/Groom.jpg" alt="Bride" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: center;">
+                        <h2>Raihan Parlaungan</h2>
+                    </div>
+                    <div class="col-md-6 text-center mb-4">
+                        <img src="./src/Bride.jpg" alt="Groom" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+                        <h2>Isnin Meiva</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section id="journey" class="section">
+                <h2 class="text-center mb-5">Our Journey</h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">How We Met</h3>
+                                <p class="card-text">We were introduced through mutual friends in August 2022, and shortly after, we met in the city of Bandung.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Our Adventures</h3>
+                                <p class="card-text">From that meeting, we decided to start a relationship on September 2, 2022, in a Long Distance Relationship (LDR) for 2 years.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">The Proposal</h3>
+                                <p class="card-text">The LDR condition turned out not to be a barrier for our relationship. After getting to know each other's families, we held our engagement ceremony on September 15, 2024, which concluded with setting the wedding date on November 24, 2024.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="photos" class="section">
+                <h2 class="text-center mb-5">Our Photos</h2>
+                <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./src/3.jpg" class="d-block w-100" alt="Couple Photo 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./src/4.jpg" class="d-block w-100" alt="Couple Photo 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./src/5.jpg" class="d-block w-100" alt="Couple Photo 3">
+                        </div>
+                        <div class="carousel-item"></div>
+                            <img src="./src/6.jpg" class="d-block w-100" alt="Couple Photo 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </section>
+
+            <section id="details" class="section">
+                <h2 class="text-center mb-5">Event Details</h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Date</h3>
+                                <p class="card-text">Sunday, 24 November 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Time</h3>
+                                <p class="card-text">9:00 AM - 02:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Venue</h3>
+                                <p class="card-text">Beautiful Garden Venue</p>
+                                <a href="https://goo.gl/maps/your-venue-link" target="_blank" class="btn btn-custom">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gift" class="section text-center">
+                <h2 class="mb-4">Wedding Gift</h2>
+                <p class="mb-4">Your presence is the greatest gift. However, if you wish to honor us with a gift, we have provided our account details below:</p>
+                
+                <div class="row justify-content-center">
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="path/to/bca-logo.png" alt="BCA Logo" class="mb-3" style="max-width: 100px;">
+                                <h3 class="card-title">Bride's Account</h3>
+                                <p class="card-text">Bride's Name</p>
+                                <p class="card-text font-weight-bold">1234567890</p>
+                                <button class="btn btn-custom" onclick="copyToClipboard('1234567890')">Copy Number</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="path/to/bca-logo.png" alt="BCA Logo" class="mb-3" style="max-width: 100px;">
+                                <h3 class="card-title">Groom's Account</h3>
+                                <p class="card-text">Groom's Name</p>
+                                <p class="card-text font-weight-bold">0987654321</p>
+                                <button class="btn btn-custom" onclick="copyToClipboard('0987654321')">Copy Number</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="social" class="section text-center">
+                <h2 class="mb-4">Follow Our Journey</h2>
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </section>
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function getGuestNameFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('guest') || '';
+        }
+
+        function updateGuestGreeting() {
+            const guestName = getGuestNameFromURL();
+            const greetingElement = document.getElementById('guestGreeting');
+            if (guestName) {
+                greetingElement.textContent = `Dear ${guestName}, we cordially invite you to celebrate our love`;
+            }
+        }
+
+        function openInvitation() {
+            document.getElementById('openInvitation').classList.add('d-none');
+            document.getElementById('invitation').classList.remove('d-none');
+        }
+
+        // Call updateGuestGreeting when the page loads
+        window.addEventListener('load', updateGuestGreeting);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for revealing sections on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                return
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
