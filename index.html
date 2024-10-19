@@ -216,6 +216,29 @@
             text-align: justify;
             text-justify: inter-word;
         }
+
+        .image-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2); /* Adjust opacity as needed */
+            border-radius: 50%; /* This makes the overlay round */
+        }
     </style>
 </head>
 <body>
@@ -250,8 +273,11 @@
             <section id="couple" class="section">
                 <div class="row">
                     <div class="col-md-6 text-center mb-4">
-                        <img src="./src/Groom.jpg" alt="Bride" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: center;">
-                        <h3>Raihan Parlaungan</h2>
+                        <div class="image-container">
+                            <img src="./src/Groom.jpg" alt="Groom" class="img-fluid rounded-circle mb-3">
+                            <div class="overlay"></div>
+                        </div>
+                        <h3>Raihan Parlaungan</h3>
                     </div>
                     <div class="col-md-6 text-center mb-4">
                         <img src="./src/Bride.jpg" alt="Groom" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
@@ -341,7 +367,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">Venue</h3>
-                                <p class="card-text">Brides's House, blok Senin RT 01 RW 02, Desa/Kec. Leuwimunding, Kab. Majalengka</p>
+                                <p class="card-text">Brides's House at Blok Senin RT 01 RW 02, Desa/Kec. Leuwimunding, Kab. Majalengka</p>
                                 <a href="https://goo.gl/maps/1g3N7jRfyMBxQwwk7" target="_blank" class="btn btn-custom">Get Directions</a>
                             </div>
                         </div>
