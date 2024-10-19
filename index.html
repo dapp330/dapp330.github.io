@@ -41,14 +41,19 @@
             font-family: 'Great Vibes', cursive;
             color: #3e506f;
         }
+        h2 {
+            font-size: 2.2rem!important;
+        }
         .btn-custom {
             font-family: 'Montserrat', sans-serif;
         }
         .card-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem!important;
         }
         .card-text {
             font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem!important;
         }
         .open-invitation h1 {
             font-family: 'Sacramento', cursive;
@@ -109,17 +114,18 @@
             color: #f2e1cd;
         }
         .open-invitation {
-            background-image: url('src/1.jpg');
+            background-image: url('src/4.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             text-align: center;
             color: #ffffff;
             position: relative;
+            padding: 40px 20px;
         }
         .open-invitation::before {
             content: '';
@@ -134,17 +140,28 @@
             position: relative;
             z-index: 1;
         }
+        .open-invitation-content {
+            margin-top: 2vh; /* Adjusted to move content more to the top */
+        }
+        .open-invitation-footer {
+            position: absolute;
+            bottom: 10vh; /* Adjusted to be at the bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
         .open-invitation h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
+            white-space: nowrap; /* Ensures text stays on one line */
         }
         .open-invitation p {
-            font-size: 1.5rem;
+            font-size: 1rem;
             margin-bottom: 30px;
         }
         .open-invitation button {
-            font-size: 1.2rem;
+            font-size: 0.8rem;
             padding: 10px 30px;
             background-color: #f3d6c2;
             color: #4A4A4A;
@@ -152,33 +169,81 @@
             border-radius: 25px;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto; /* Center the button horizontally */
         }
         .open-invitation button:hover {
             background-color: #f2e1cd;
             color: #4A4A4A;
         }
-        /* Adjust carousel images */
-        .carousel-item img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
+        .open-invitation button svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            fill: currentColor;
+        }
+        .display-1 {
+            font-size: calc(1.1rem + 4.5vw)!important;
+        }
+
+        .surah-text {
+            font-size: 0.75rem!important;
+        }
+
+        /* Add a media query for smaller screens */
+        @media (max-width: 480px) {
+            .open-invitation h1 {
+                font-size: 2.5rem; /* Smaller font size for mobile devices */
+            }
+        }
+
+        .journey-card .card-body {
+            padding: 20px;
+        }
+
+        .journey-card .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #3e506f;
+        }
+
+        .journey-card .card-text {
+            font-size: 0.9rem;
+            color: #4A4A4A;
+            text-align: justify;
+            text-justify: inter-word;
         }
     </style>
 </head>
 <body>
     <div class="page-container">
         <div class="open-invitation" id="openInvitation">
-            <h1 class="open-invitation-text">Raihan & Meiva's Wedding</h1>
-            <p id="guestGreeting">We cordially invite you to celebrate our love</p>
-            <button onclick="openInvitation()">Open Invitation</button>
+            <div class="open-invitation-content">
+                <h1 class="open-invitation-text">The wedding of</h1>
+                <h1 class="open-invitation-text">Raihan & Meiva</h1>
+            </div>
+            <div class="open-invitation-footer">
+                <p id="guestGreeting">We cordially invite you to celebrate our love</p>
+                <button onclick="openInvitation()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M494.586 164.516c-4.697-3.883-111.723-89.95-135.251-108.657C337.231 38.191 299.437 0 256 0c-43.205 0-80.636 37.717-103.335 55.859-24.463 19.45-131.07 105.195-135.15 108.549A48.004 48.004 0 0 0 0 201.485V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V201.509a48 48 0 0 0-17.414-36.993zM464 458a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6V204.347c0-1.813.816-3.526 2.226-4.665 15.87-12.814 108.793-87.554 132.364-106.293C200.755 78.88 232.398 48 256 48c23.693 0 55.857 31.369 73.41 45.389 23.573 18.741 116.503 93.493 132.366 106.316a5.99 5.99 0 0 1 2.224 4.663V458zm-31.991-187.704c4.249 5.159 3.465 12.795-1.745 16.981-28.975 23.283-59.274 47.597-70.929 56.863C336.636 362.283 299.205 400 256 400c-43.452 0-81.287-38.237-103.335-55.86-11.279-8.967-41.744-33.413-70.927-56.865-5.21-4.187-5.993-11.822-1.745-16.981l15.258-18.528c4.178-5.073 11.657-5.843 16.779-1.726 28.618 23.001 58.566 47.035 70.56 56.571C200.143 320.631 232.307 352 256 352c23.602 0 55.246-30.88 73.41-45.389 11.994-9.535 41.944-33.57 70.563-56.568 5.122-4.116 12.601-3.346 16.778 1.727l15.258 18.526z"/>
+                    </svg>
+                    Open Invitation
+                </button>
+            </div>
         </div>
 
         <div class="container-fluid d-none" id="invitation">
             <section id="intro" class="section text-center">
-                <h1 class="display-1 mb-4 pt-5">Raihan & Meiva's Wedding Invitation</h1>
-                <div class="arabic-text mb-4">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</div>
-                <p class="lead mb-5">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them, and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."</p>
-                <p>- QS. Ar-Rum : 21 -</p>
+                <h1 class="display-1 pt-5">Wedding Invitation Of</h1>
+                <h1 class="display-1 mb-5">Raihan & Meiva </h1>
+                <div class="arabic-text">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا </div>
+                 <div class="arabic-text mb-5 "> وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</div>
+                <p class="surah-text">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."
+                <p class="surah-text">- QS. Ar-Rum : 21 -</p>
                 
             </section>
 
@@ -186,11 +251,11 @@
                 <div class="row">
                     <div class="col-md-6 text-center mb-4">
                         <img src="./src/Groom.jpg" alt="Bride" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: center;">
-                        <h2>Raihan Parlaungan</h2>
+                        <h3>Raihan Parlaungan</h2>
                     </div>
                     <div class="col-md-6 text-center mb-4">
                         <img src="./src/Bride.jpg" alt="Groom" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
-                        <h2>Isnin Meiva</h2>
+                        <h3>Isnin Meiva</h2>
                     </div>
                 </div>
             </section>
@@ -218,7 +283,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">The Proposal</h3>
-                                <p class="card-text">The LDR condition turned out not to be a barrier for our relationship. After getting to know each other's families, we held our engagement ceremony on September 15, 2024, which concluded with setting the wedding date on November 24, 2024.</p>
+                                <p class="card-text">We’re turn out doing okay with the LDR condition. After getting to know each other's families, we held our engagement ceremony on September 15, 2024, which concluded with setting the wedding date on November 24, 2024.</p>
                             </div>
                         </div>
                     </div>
@@ -276,8 +341,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">Venue</h3>
-                                <p class="card-text">Beautiful Garden Venue</p>
-                                <a href="https://goo.gl/maps/your-venue-link" target="_blank" class="btn btn-custom">Get Directions</a>
+                                <p class="card-text">Brides's House, blok Senin RT 01 RW 02, Desa/Kec. Leuwimunding, Kab. Majalengka</p>
+                                <a href="https://goo.gl/maps/1g3N7jRfyMBxQwwk7" target="_blank" class="btn btn-custom">Get Directions</a>
                             </div>
                         </div>
                     </div>
@@ -287,7 +352,6 @@
             <section id="gift" class="section text-center">
                 <h2 class="mb-4">Wedding Gift</h2>
                 <p class="mb-4">Your presence is the greatest gift. However, if you wish to honor us with a gift, we have provided our account details below:</p>
-                
                 <div class="row justify-content-center">
                     <div class="col-md-6 mb-4">
                         <div class="card">
@@ -303,23 +367,22 @@
                     <div class="col-md-6 mb-4">
                         <div class="card">
                             <div class="card-body">
-                                <img src="./src/bca.png" alt="BCA Logo" class="mb-3" style="max-width: 100px;">
+                                <img src="./src/Bank BRI.svg" alt="BRI Logo" class="mb-3" style="max-width: 100px;">
                                 <h3 class="card-title">Groom's Account</h3>
                                 <p class="card-text">Isnin Meiva</p>
-                                <p class="card-text font-weight-bold">0987654321</p>
-                                <button class="btn btn-custom" onclick="copyToClipboard('0987654321')">Copy Number</button>
+                                <p class="card-text font-weight-bold">430101024736538</p>
+                                <button class="btn btn-custom" onclick="copyToClipboard('430101024736538')">Copy Number</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section id="social" class="section text-center">
-                <h2 class="mb-4">Follow Our Journey</h2>
+                <h3 class="mb-4">Follow Our Journey</h3>
                 <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
             </section>
-
 
         </div>
     </div>
@@ -339,13 +402,28 @@
             }
         }
 
+        function disableScroll() {
+            document.body.style.overflow = 'hidden';
+        }
+
+        function enableScroll() {
+            document.body.style.overflow = '';
+        }
+
         function openInvitation() {
             document.getElementById('openInvitation').classList.add('d-none');
             document.getElementById('invitation').classList.remove('d-none');
+            enableScroll();
+            
+            // Scroll to the intro section
+            document.getElementById('intro').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Call updateGuestGreeting when the page loads
-        window.addEventListener('load', updateGuestGreeting);
+        // Call updateGuestGreeting and disableScroll when the page loads
+        window.addEventListener('load', function() {
+            updateGuestGreeting();
+            disableScroll();
+        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
