@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" href="./src/love-letter.png">
     <meta charset="UTF-8">
@@ -7,12 +8,16 @@
     <title>Raihan & Meiva's Wedding Invitation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Add this line to include the Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora&family=Montserrat&family=Sacramento&family=Playfair+Display&family=Pinyon+Script&family=Lobster+Two&family=Assistant&family=Alike+Angular&family=Poppins&family=Ubuntu&family=Roboto&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora&family=Montserrat&family=Sacramento&family=Playfair+Display&family=Pinyon+Script&family=Lobster+Two&family=Assistant&family=Alike+Angular&family=Poppins&family=Ubuntu&family=Roboto&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         body {
             font-family: 'Lora', serif;
-            background-color: #f0f0f0; /* Light gray background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #4A4A4A;
             display: flex;
             justify-content: center;
@@ -20,99 +25,126 @@
             min-height: 100vh;
             margin: 0;
             padding: 0;
+            background-color: #F2EDEA;
         }
+
         .page-container {
             width: 100%;
-            max-width: 480px; /* Adjust this value to your preferred mobile width */
+            max-width: 480px;
             min-height: 100vh;
-            background-color: #fff5f5;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-image: url('./src/background.jpg');
+            /* background-color: rgba(255, 245, 245, 0.95); */
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
             overflow-y: auto;
         }
+
         .container-fluid {
             padding-left: 15px;
             padding-right: 15px;
         }
+
         .open-invitation {
             width: 100%;
             max-width: 480px;
         }
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             font-family: 'Great Vibes', cursive;
             color: #3e506f;
         }
+
         h2 {
-            font-size: 2.2rem!important;
+            font-size: 2.2rem !important;
         }
+
         .btn-custom {
             font-family: 'Montserrat', sans-serif;
         }
+
         .card-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 1rem!important;
+            font-size: 1rem !important;
         }
+
         .card-text {
             font-family: 'Poppins', sans-serif;
-            font-size: 0.8rem!important;
+            font-size: 0.8rem !important;
         }
+
         .open-invitation h1 {
             font-family: 'Sacramento', cursive;
         }
+
         .open-invitation p {
             font-family: 'Assistant', sans-serif;
         }
+
         .section {
             padding: 50px 0;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s, transform 0.5s;
         }
+
         .section.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         .header {
             background-color: #efede6;
         }
+
         .couple-info {
             background-color: #fbf1ea;
         }
+
         .event-details {
             background-color: #dfeae4;
         }
+
         .open-invitation-text {
-            color: #f3d6c2!important;
+            color: #f3d6c2 !important;
         }
+
         .btn-custom {
             background-color: #f3d6c2;
             color: #4A4A4A;
             border: none;
             transition: all 0.3s ease;
         }
+
         .btn-custom:hover {
             background-color: #f2e1cd;
             transform: scale(1.05);
         }
+
         .card {
             background-color: rgba(255, 255, 255, 0.9);
             border: 1px solid #f3d6c2;
             border-radius: 15px;
             transition: all 0.3s ease;
         }
+
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
+
         .social-icon {
             font-size: 24px;
             color: #f3d6c2;
             margin: 0 10px;
             transition: all 0.3s ease;
         }
+
         .social-icon:hover {
             transform: scale(1.2);
             color: #f2e1cd;
         }
+
         .open-invitation {
             background-image: url('src/1.jpg');
             background-size: cover;
@@ -127,6 +159,7 @@
             position: relative;
             padding: 40px 20px;
         }
+
         .open-invitation::before {
             content: '';
             position: absolute;
@@ -136,30 +169,41 @@
             bottom: 0;
             background-color: rgba(0, 0, 0, 0.5);
         }
-        .open-invitation h1, .open-invitation p, .open-invitation button {
+
+        .open-invitation h1,
+        .open-invitation p,
+        .open-invitation button {
             position: relative;
             z-index: 1;
         }
+
         .open-invitation-content {
-            margin-top: 2vh; /* Adjusted to move content more to the top */
+            margin-top: 2vh;
+            /* Adjusted to move content more to the top */
         }
+
         .open-invitation-footer {
             position: absolute;
-            bottom: 10vh; /* Adjusted to be at the bottom */
+            bottom: 10vh;
+            /* Adjusted to be at the bottom */
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
         }
+
         .open-invitation h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 3.5rem;
             margin-bottom: 20px;
-            white-space: nowrap; /* Ensures text stays on one line */
+            white-space: nowrap;
+            /* Ensures text stays on one line */
         }
+
         .open-invitation p {
             font-size: 1rem;
             margin-bottom: 30px;
         }
+
         .open-invitation button {
             font-size: 0.8rem;
             padding: 10px 30px;
@@ -172,30 +216,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto; /* Center the button horizontally */
+            margin: 0 auto;
+            /* Center the button horizontally */
         }
+
         .open-invitation button:hover {
             background-color: #f2e1cd;
             color: #4A4A4A;
         }
+
         .open-invitation button svg {
             width: 20px;
             height: 20px;
             margin-right: 10px;
             fill: currentColor;
         }
+
         .display-1 {
-            font-size: calc(1.1rem + 4.5vw)!important;
+            font-size: calc(1.1rem + 4.5vw) !important;
         }
 
         .surah-text {
-            font-size: 0.75rem!important;
+            font-size: 0.75rem !important;
         }
 
         /* Add a media query for smaller screens */
         @media (max-width: 480px) {
             .open-invitation h1 {
-                font-size: 2.5rem; /* Smaller font size for mobile devices */
+                font-size: 2.5rem;
+                /* Smaller font size for mobile devices */
             }
         }
 
@@ -236,8 +285,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.2); /* Adjust opacity as needed */
-            border-radius: 50%; /* This makes the overlay round */
+            background-color: rgba(0, 0, 0, 0.2);
+            /* Adjust opacity as needed */
+            border-radius: 50%;
+            /* This makes the overlay round */
         }
 
         @keyframes fadeIn {
@@ -245,6 +296,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -288,7 +340,7 @@
             border-radius: 50%;
             padding: 3px;
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             opacity: 0.5;
         }
@@ -308,18 +360,24 @@
         @media (min-width: 768px) {
             #couple .row {
                 flex-direction: column;
-                align-items: center; /* Center align the columns */
+                align-items: center;
+                /* Center align the columns */
             }
+
             #couple .col-md-6 {
-                max-width: 100%; /* Full width for each column */
+                max-width: 100%;
+                /* Full width for each column */
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                align-items: center; /* Center content within each column */
+                align-items: center;
+                /* Center content within each column */
             }
+
             #gift .row {
                 flex-direction: column;
             }
+
             #gift .col-md-6 {
                 max-width: 100%;
                 width: 100%;
@@ -335,8 +393,56 @@
         .image-container {
             margin: 0 auto;
         }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f3d6c2;
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
+
+        .countdown-item span:first-child {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4A4A4A;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* This creates a 4:3 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
     </style>
 </head>
+
 <body>
     <!-- Add this at the end of the body, just before the closing </body> tag -->
     <audio id="backgroundMusic" loop>
@@ -358,7 +464,8 @@
                 <p id="guestGreeting" class="fade-in">We cordially invite you to celebrate our love</p>
                 <button id="openInvitationBtn" onclick="openInvitation()" class="fade-in hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path d="M494.586 164.516c-4.697-3.883-111.723-89.95-135.251-108.657C337.231 38.191 299.437 0 256 0c-43.205 0-80.636 37.717-103.335 55.859-24.463 19.45-131.07 105.195-135.15 108.549A48.004 48.004 0 0 0 0 201.485V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V201.509a48 48 0 0 0-17.414-36.993zM464 458a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6V204.347c0-1.813.816-3.526 2.226-4.665 15.87-12.814 108.793-87.554 132.364-106.293C200.755 78.88 232.398 48 256 48c23.693 0 55.857 31.369 73.41 45.389 23.573 18.741 116.503 93.493 132.366 106.316a5.99 5.99 0 0 1 2.224 4.663V458zm-31.991-187.704c4.249 5.159 3.465 12.795-1.745 16.981-28.975 23.283-59.274 47.597-70.929 56.863C336.636 362.283 299.205 400 256 400c-43.452 0-81.287-38.237-103.335-55.86-11.279-8.967-41.744-33.413-70.927-56.865-5.21-4.187-5.993-11.822-1.745-16.981l15.258-18.528c4.178-5.073 11.657-5.843 16.779-1.726 28.618 23.001 58.566 47.035 70.56 56.571C200.143 320.631 232.307 352 256 352c23.602 0 55.246-30.88 73.41-45.389 11.994-9.535 41.944-33.57 70.563-56.568 5.122-4.116 12.601-3.346 16.778 1.727l15.258 18.526z"/>
+                        <path
+                            d="M494.586 164.516c-4.697-3.883-111.723-89.95-135.251-108.657C337.231 38.191 299.437 0 256 0c-43.205 0-80.636 37.717-103.335 55.859-24.463 19.45-131.07 105.195-135.15 108.549A48.004 48.004 0 0 0 0 201.485V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V201.509a48 48 0 0 0-17.414-36.993zM464 458a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6V204.347c0-1.813.816-3.526 2.226-4.665 15.87-12.814 108.793-87.554 132.364-106.293C200.755 78.88 232.398 48 256 48c23.693 0 55.857 31.369 73.41 45.389 23.573 18.741 116.503 93.493 132.366 106.316a5.99 5.99 0 0 1 2.224 4.663V458zm-31.991-187.704c4.249 5.159 3.465 12.795-1.745 16.981-28.975 23.283-59.274 47.597-70.929 56.863C336.636 362.283 299.205 400 256 400c-43.452 0-81.287-38.237-103.335-55.86-11.279-8.967-41.744-33.413-70.927-56.865-5.21-4.187-5.993-11.822-1.745-16.981l15.258-18.528c4.178-5.073 11.657-5.843 16.779-1.726 28.618 23.001 58.566 47.035 70.56 56.571C200.143 320.631 232.307 352 256 352c23.602 0 55.246-30.88 73.41-45.389 11.994-9.535 41.944-33.57 70.563-56.568 5.122-4.116 12.601-3.346 16.778 1.727l15.258 18.526z" />
                     </svg>
                     Open Invitation
                 </button>
@@ -369,18 +476,22 @@
             <section id="intro" class="section text-center">
                 <h1 class="display-1 pt-5">Wedding Invitation of</h1>
                 <h1 class="display-1 mb-5">Raihan & Meiva </h1>
-                <div class="arabic-text">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتسْكُنُوا إِلَيْهَا </div>
-                 <div class="arabic-text mb-5 "> وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</div>
-                <p class="surah-text">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."
+                <div class="arabic-text">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنُسِكُمْ أَزْوَاجًا لِّتسْكُنُوا
+                    إِلَيْهَا </div>
+                <div class="arabic-text mb-5 "> وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ
+                    لِّقَوْمٍ يَتَفَكَّرُونَ</div>
+                <p class="surah-text">"And of His signs is that He created for you from yourselves mates that you may
+                    find tranquility in them and He placed between you affection and mercy. Indeed in that are signs for
+                    a people who give thought."
                 <p class="surah-text">- QS. Ar-Rum : 21 -</p>
-                
+
             </section>
 
             <section id="couple" class="section">
                 <div class="row">
                     <div class="col-md-6 text-center mb-5 fade-in" id="groomContainer">
                         <div class="image-container">
-                            <img src="./src/Groom.jpg" alt="Groom" class="img-fluid rounded-circle mb-3">
+                            <img src="./src/Groom.jpg" alt="Groom" class="img-fluid rounded-circle mb-3" loading="lazy">
                             <div class="overlay"></div>
                         </div>
                         <h3 class="mt-3">Raihan Parlaungan</h3>
@@ -392,10 +503,10 @@
                     </div>
                     <div class="col-md-6 text-center mb-4 fade-in" id="brideContainer">
                         <div class="image-container">
-                            <img src="./src/Bride.jpg" alt="Bride" class="img-fluid rounded-circle mb-3">
+                            <img src="./src/Bride.jpg" alt="Bride" class="img-fluid rounded-circle mb-3" loading="lazy">
                             <div class="overlay"></div>
                         </div>
-                        <h3 class="mt-3">Isnin Meiva</h3>
+                        <h3 class="mt-3">Isnin Meiva, S.Pd.</h3>
                         <p class="parents-info">The first daughter of Casiman and Niva Intani</p>
                         <a href="https://www.instagram.com/xxmeiva/" target="_blank" class="social-link">
                             <img src="./src/ig.png" alt="Instagram" class="social-icon">
@@ -413,8 +524,9 @@
                             <div class="card-body">
                                 <h3 class="card-title">Finding Each Other (2022)</h3>
                                 <p class="card-text">
-                                    Being single felt like freedom for us, but fate had other plans. 
-                                    In mid-2022 ✨a magical moment✨ happened. At that time, our mutual friend shared photos when He spent time with each of us, 
+                                    Being single felt like freedom for us, but fate had other plans.
+                                    In mid-2022 ✨a magical moment✨ happened. At that time, our mutual friend shared
+                                    photos when He spent time with each of us,
                                     and boom—unexpectedly, we were both interested in getting to know each other.
                                 </p>
                             </div>
@@ -425,7 +537,10 @@
                             <div class="card-body">
                                 <h3 class="card-title">Living the Relationship (2022)</h3>
                                 <p class="card-text">
-                                    After officially getting to know each other and becoming familiar with one another, exactly one month later, we finally met in Bandung City. Feeling that we were a good match, at the end of that meeting, we decided to start a relationship on September 2, 2024, in a long-distance relationship (LDR)🤍
+                                    After officially getting to know each other and becoming familiar with one another,
+                                    exactly one month later, we finally met in Bandung City. Feeling that we were a good
+                                    match, at the end of that meeting, we decided to start a relationship on September
+                                    2, 2024, in a long-distance relationship (LDR)
                             </div>
                         </div>
                     </div>
@@ -433,12 +548,15 @@
             </section>
             <section id="proposal" class="section">
                 <h2 class="text-center mb-5">Journey to the Wedding</h2>
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title">Getting Engaged & Married (2024)</h3>
-                            <p class="card-text">We have always committed to making time to meet each other every month, eventually, we're doing great with the LDR condition for 2 years, and finally we held our engagement ceremony on September 15, 2024, which concluded with setting the wedding date on November 24, 2024💍</p>
-                            </div>
-                        </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Getting Engaged & Married (2024)</h3>
+                        <p class="card-text">We have always committed to making time to meet each other every month,
+                            eventually, we're doing great with the LDR condition for 2 years, and finally we held our
+                            engagement ceremony on September 15, 2024, which concluded with setting the wedding date on
+                            November 24, 2024💍</p>
+                    </div>
+                </div>
             </section>
 
             <section id="photos" class="section">
@@ -446,30 +564,32 @@
                 <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="./src/3.jpg" class="d-block w-100" alt="Couple Photo 1">
+                            <img src="./src/3.jpg" class="d-block w-100" alt="Couple Photo 1" loading="lazy">
                         </div>
                         <div class="carousel-item">
-                            <img src="./src/4.jpg" class="d-block w-100" alt="Couple Photo 2">
+                            <img src="./src/4.jpg" class="d-block w-100" alt="Couple Photo 2" loading="lazy">
                         </div>
                         <div class="carousel-item">
-                            <img src="./src/5.jpg" class="d-block w-100" alt="Couple Photo 3">
+                            <img src="./src/5.jpg" class="d-block w-100" alt="Couple Photo 3" loading="lazy">
                         </div>
                         <div class="carousel-item">
-                            <img src="./src/6.jpg" class="d-block w-100" alt="Couple Photo 3">
+                            <img src="./src/6.jpg" class="d-block w-100" alt="Couple Photo 3" loading="lazy">
                         </div>
                         <div class="carousel-item">
-                            <img src="./src/7.jpg" class="d-block w-100" alt="Couple Photo 3">
+                            <img src="./src/7.jpg" class="d-block w-100" alt="Couple Photo 3" loading="lazy">
                         </div>
                         <div class="carousel-item">
-                            <img src="./src/8.jpg" class="d-block w-100" alt="Couple Photo 3">
+                            <img src="./src/8.jpg" class="d-block w-100" alt="Couple Photo 3" loading="lazy">
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -477,8 +597,31 @@
 
             <section id="details" class="section">
                 <h2 class="text-center mb-5">Event Details</h2>
+                <!-- Add countdown container -->
+                <div class="text-center mb-5">
+                    <div class="countdown-container">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="row justify-content-center">
-                    <div class="col-12 mb-4 fade-in" id="dateCard">
+                    <!-- Event Times Section -->
+                    <h3 class="text-center mb-4">Akad Nikah</h3>
+                    <div class="col-12 mb-4 fade-in" id="akadDateCard">
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">Date</h3>
@@ -486,20 +629,49 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 mb-4 fade-in" id="timeCard">
+                    <div class="col-12 mb-4 fade-in" id="akadTimeCard">
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">Time</h3>
-                                <p class="card-text">8:00 AM - 03:00 PM</p>
+                                <p class="card-text">8:00 AM</p>
                             </div>
                         </div>
                     </div>
+
+                    <h3 class="text-center mb-4">Resepsi</h3>
+                    <div class="col-12 mb-4 fade-in" id="resepsiDateCard">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Date</h3>
+                                <p class="card-text">Sunday, 24 November 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 fade-in" id="resepsiTimeCard">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Time</h3>
+                                <p class="card-text">10:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Venue Section -->
+                    <h3 class="text-center mb-4">Venue</h3>
                     <div class="col-12 mb-4 fade-in" id="venueCard">
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="card-title">Venue</h3>
-                                <p class="card-text">Brides's House at Blok Senin RT 01 RW 02, Desa/Kec. Leuwimunding, Kab. Majalengka</p>
-                                <a href="https://goo.gl/maps/1g3N7jRfyMBxQwwk7" target="_blank" class="btn btn-custom">Get Directions</a>
+                                <h3 class="card-title">Location</h3>
+                                <div class="map-container">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1424.1556688306557!2d108.34361045923241!3d-6.739836570189463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNDQnMjIuNyJTIDEwOMKwMjAnMzguOCJF!5e0!3m2!1sen!2sid!4v1730566978448!5m2!1sen!2sid"
+                                        style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                <p class="card-text">Dusun Pekauman, Blok Senin RT 01 RW 02, Desa/Kec. Leuwimunding,
+                                    Kab. Majalengka</p>
+                                <a href="https://goo.gl/maps/1g3N7jRfyMBxQwwk7" target="_blank"
+                                    class="btn btn-custom">Get Directions</a>
                             </div>
                         </div>
                     </div>
@@ -508,27 +680,30 @@
 
             <section id="gift" class="section text-center">
                 <h2 class="mb-4">Wedding Gift</h2>
-                <p class="mb-4">Your presence is the greatest gift. However, if you wish to honor us with a gift, we have provided our account details below:</p>
+                <p class="mb-4">Your presence is the greatest gift. However, if you wish to honor us with a gift, we
+                    have provided our account details below:</p>
                 <div class="row justify-content-center">
                     <div class="col-md-6 mb-4 fade-in" id="groomGiftCard">
                         <div class="card">
                             <div class="card-body">
-                                <img src="./src/bca.png" alt="BCA Logo" class="mb-3" style="max-width: 100px;">
+                                <img src="./src/bca.png" alt="BCA Logo" class="mb-3" style="max-width: 100px;" loading="lazy">
                                 <h3 class="card-title">Grooms's Account</h3>
                                 <p class="card-text">Mohammad Raihan Parlaungan</p>
                                 <p class="card-text font-weight-bold">6281158641</p>
-                                <button class="btn btn-custom" onclick="copyToClipboard('6281158641')">Copy Number</button>
+                                <button class="btn btn-custom" onclick="copyToClipboard('6281158641')">Copy
+                                    Number</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4 fade-in" id="brideGiftCard">
                         <div class="card">
                             <div class="card-body">
-                                <img src="./src/Bank BRI.svg" alt="BRI Logo" class="mb-3" style="max-width: 100px;">
+                                <img src="./src/Bank BRI.svg" alt="BRI Logo" class="mb-3" style="max-width: 100px;" loading="lazy">
                                 <h3 class="card-title">Bride's Account</h3>
                                 <p class="card-text">Isnin Meiva</p>
                                 <p class="card-text font-weight-bold">430101024736538</p>
-                                <button class="btn btn-custom" onclick="copyToClipboard('430101024736538')">Copy Number</button>
+                                <button class="btn btn-custom" onclick="copyToClipboard('430101024736538')">Copy
+                                    Number</button>
                             </div>
                         </div>
                     </div>
@@ -568,7 +743,7 @@
             document.getElementById('openInvitation').classList.add('d-none');
             document.getElementById('invitation').classList.remove('d-none');
             enableScroll();
-            
+
             // Scroll to the intro section
             document.getElementById('intro').scrollIntoView({ behavior: 'smooth' });
         }
@@ -622,13 +797,23 @@
         }
 
         function animateDetails() {
-            const dateCard = document.getElementById('dateCard');
-            const timeCard = document.getElementById('timeCard');
-            const venueCard = document.getElementById('venueCard');
+            const detailCards = [
+                'akadDateCard',
+                'akadTimeCard',
+                'resepsiDateCard',
+                'resepsiTimeCard',
+                'venueCard'
+            ];
 
-            setTimeout(() => { dateCard.classList.add('show'); }, 500);
-            setTimeout(() => { timeCard.classList.add('show'); }, 1000);
-            setTimeout(() => { venueCard.classList.add('show'); }, 1500);
+            // Animate all cards with a slight delay between each
+            detailCards.forEach((cardId, index) => {
+                setTimeout(() => {
+                    const card = document.getElementById(cardId);
+                    if (card) { // Add null check
+                        card.classList.add('show');
+                    }
+                }, 500 * (index + 1));
+            });
         }
 
         function animateGift() {
@@ -644,6 +829,7 @@
 
         function attemptPlayMusic() {
             if (hasInteracted && !hasAttemptedAutoplay) {
+                backgroundMusic.currentTime = 0; // Reset to beginning on first play only
                 backgroundMusic.play().then(() => {
                     isPlaying = true;
                     musicIcon.src = 'src/pause.png';
@@ -657,28 +843,31 @@
         }
 
         // Add event listeners for user interaction
-        document.addEventListener('click', function() {
+        document.addEventListener('click', function () {
             hasInteracted = true;
             attemptPlayMusic();
         });
 
-        document.addEventListener('keydown', function() {
+        document.addEventListener('keydown', function () {
             hasInteracted = true;
             attemptPlayMusic();
         });
 
         // Modify the existing load event listener
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             updateGuestGreeting();
             disableScroll();
             animateInvitation();
 
+            // Reset audio position and ensure it's paused initially
+            backgroundMusic.currentTime = 0;
             isPlaying = false;
             musicIcon.src = 'src/play.png';
         });
 
         // Modify the toggleMusic function
         function toggleMusic() {
+            console.log("toggleMusic function called");
             if (backgroundMusic.paused) {
                 backgroundMusic.play().then(() => {
                     isPlaying = true;
@@ -693,6 +882,8 @@
                 musicIcon.src = 'src/play.png';
                 console.log("Music paused");
             }
+            console.log("Current isPlaying state:", isPlaying);
+            console.log("Current music paused state:", backgroundMusic.paused);
         }
 
         // Smooth scrolling for anchor links
@@ -710,7 +901,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    switch(entry.target.id) {
+                    switch (entry.target.id) {
                         case 'couple':
                             animateCouple();
                             break;
@@ -733,9 +924,9 @@
         });
 
         function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
+            navigator.clipboard.writeText(text).then(function () {
                 return
-            }, function(err) {
+            }, function (err) {
                 console.error('Could not copy text: ', err);
             });
         }
@@ -766,20 +957,240 @@
         }
 
         // Make sure this event listener is set up correctly
-        musicControl.addEventListener('click', function(event) {
+        musicControl.addEventListener('click', function (event) {
             console.log("Music control clicked");
             toggleMusic();
             event.stopPropagation(); // Prevent event from bubbling up
         });
 
         // For debugging: log initial states when the page loads
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             console.log("Page loaded");
             console.log("Initial isPlaying state:", isPlaying);
             console.log("Initial music paused state:", backgroundMusic.paused);
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('November 24, 2024 08:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown every second
+        updateCountdown(); // Initial call
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Add this new function to handle translations
+        const translations = {
+            en: {
+                weddingOf: "The wedding of",
+                inviteText: "We happily invite you to celebrate our love",
+                dearGuest: "Dear",
+                openInvitation: "Open Invitation",
+                weddingInvitation: "Wedding Invitation of",
+                surahText: "\"And of His signs is that He created for you from yourselves mates that you may find tranquility in them and He placed between you affection and mercy. Indeed in that are signs for a people who give thought.\"",
+                firstSonOf: "The first son of",
+                firstDaughterOf: "The first daughter of",
+                ourJourney: "Our Journey",
+                findingEachOther: "Finding Each Other (2022)",
+                findingText: "Being single felt like freedom for us, but fate had other plans. In mid-2022 ✨a magical moment✨ happened. At that time, our mutual friend shared photos when He spent time with each of us, and boom—unexpectedly, we were both interested in getting to know each other.",
+                livingRelationship: "Living the Relationship (2022)",
+                livingText: "After officially getting to know each other and becoming familiar with one another, exactly one month later, we finally met in Bandung City. Feeling that we were a good match, at the end of that meeting, we decided to start a relationship on September 2, 2024, in a long-distance relationship (LDR)",
+                journeyToWedding: "Journey to the Wedding",
+                gettingEngaged: "Getting Engaged & Married (2024)",
+                engagedText: "We have always committed to making time to meet each other every month, eventually, we're doing great with the LDR condition for 2 years, and finally we held our engagement ceremony on September 15, 2024, which concluded with setting the wedding date on November 24, 2024💍",
+                ourPhotos: "Our Photos",
+                eventDetails: "Event Details",
+                days: "Days",
+                hours: "Hours",
+                minutes: "Minutes",
+                seconds: "Seconds",
+                date: "Date",
+                time: "Time",
+                venue: "Venue",
+                location: "Location",
+                getDirections: "Get Directions",
+                weddingGift: "Wedding Gift",
+                giftText: "Your presence is the greatest gift. However, if you wish to honor us with a gift, we have provided our account details below:",
+                groomAccount: "Groom's Account",
+                brideAccount: "Bride's Account",
+                copyNumber: "Copy Number",
+                thankYou: "Thank you for being part of our special day!, see you there!",
+                sonOf: "The first son of",
+                daughterOf: "The first daughter of",
+                proposalTitle: "Journey to the Wedding",
+                proposalSubtitle: "Getting Engaged & Married (2024)",
+                proposalText: "We have always committed to making time to meet each other every month, eventually, we're doing great with the LDR condition for 2 years, and finally we held our engagement ceremony on September 15, 2024, which concluded with setting the wedding date on November 24, 2024💍",
+                sundayDate: "Sunday, 24 November 2024",
+                and: "and",
+                mr: "",
+                mrs: ""
+            },
+            id: {
+                weddingOf: "Pernikahan",
+                inviteText: "Kami mengundang Anda untuk merayakan cinta kami",
+                dearGuest: "Kepada",
+                openInvitation: "Buka Undangan",
+                weddingInvitation: "Undangan Pernikahan",
+                surahText: "\"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.\"",
+                firstSonOf: "Putra dari",
+                firstDaughterOf: "Putri dari",
+                ourJourney: "Perjalanan Kami",
+                findingEachOther: "Menemukan Satu Sama Lain (2022)",
+                findingText: "Menjadi single terasa seperti kebebasan bagi kami, namun takdir memiliki rencana lain. Pada pertengahan 2022 ✨momen ajaib✨ terjadi. Saat itu, teman kami membagikan foto saat dia menghabiskan waktu dengan kami masing-masing, dan boom—tak disangka, kami berdua tertarik untuk saling mengenal.",
+                livingRelationship: "Menjalani Hubungan (2022)",
+                livingText: "Setelah resmi saling mengenal dan menjadi akrab satu sama lain, tepat sebulan kemudian, kami akhirnya bertemu di Kota Bandung. Merasa bahwa kami cocok, di akhir pertemuan itu, kami memutuskan untuk memulai hubungan pada 2 September 2024, dalam hubungan jarak jauh (LDR)",
+                journeyToWedding: "Perjalanan Menuju Pernikahan",
+                gettingEngaged: "Bertunangan & Menikah (2024)",
+                engagedText: "Kami selalu berkomitmen untuk meluangkan waktu bertemu setiap bulan, akhirnya, kami berhasil menjalani kondisi LDR selama 2 tahun, dan akhirnya kami mengadakan upacara pertunangan pada 15 September 2024, yang diakhiri dengan menetapkan tanggal pernikahan pada 24 November 2024💍",
+                ourPhotos: "Foto-foto Kami",
+                eventDetails: "Detail Acara",
+                days: "Hari",
+                hours: "Jam",
+                minutes: "Menit",
+                seconds: "Detik",
+                date: "Tanggal",
+                time: "Waktu",
+                venue: "Tempat",
+                location: "Lokasi",
+                getDirections: "Petunjuk Arah",
+                weddingGift: "Hadiah Pernikahan",
+                giftText: "Kehadiran Anda adalah hadiah terbaik. Namun, jika Anda ingin memberikan hadiah, kami telah menyediakan detail rekening kami di bawah ini:",
+                groomAccount: "Rekening Mempelai Pria",
+                brideAccount: "Rekening Mempelai Wanita",
+                copyNumber: "Salin Nomor",
+                thankYou: "Terima kasih telah menjadi bagian dari hari spesial kami!, sampai jumpa!",
+                sonOf: "Putra dari",
+                daughterOf: "Putri dari",
+                proposalTitle: "Perjalanan Menuju Pernikahan",
+                proposalSubtitle: "Bertunangan & Menikah (2024)",
+                proposalText: "Kami selalu berkomitmen untuk meluangkan waktu bertemu setiap bulan, akhirnya, kami berhasil menjalani kondisi LDR selama 2 tahun, dan akhirnya kami mengadakan upacara pertunangan pada 15 September 2024, yang diakhiri dengan menetapkan tanggal pernikahan pada 24 November 2024💍",
+                sundayDate: "Minggu, 24 November 2024",
+                and: "dan",
+                mr: "Bapak",
+                mrs: "Ibu"
+            }
+        };
+
+        function getLanguageFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('lan') || 'en';
+        }
+
+        function updateContent() {
+            const language = getLanguageFromURL();
+            const content = translations[language] || translations.en;
+
+            // Update all text content
+            document.querySelector('.open-invitation-text').textContent = content.weddingOf;
+            document.getElementById('guestGreeting').textContent = content.inviteText;
+            document.getElementById('openInvitationBtn').innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M494.586 164.516c-4.697-3.883-111.723-89.95-135.251-108.657C337.231 38.191 299.437 0 256 0c-43.205 0-80.636 37.717-103.335 55.859-24.463 19.45-131.07 105.195-135.15 108.549A48.004 48.004 0 0 0 0 201.485V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V201.509a48 48 0 0 0-17.414-36.993zM464 458a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6V204.347c0-1.813.816-3.526 2.226-4.665 15.87-12.814 108.793-87.554 132.364-106.293C200.755 78.88 232.398 48 256 48c23.693 0 55.857 31.369 73.41 45.389 23.573 18.741 116.503 93.493 132.366 106.316a5.99 5.99 0 0 1 2.224 4.663V458zm-31.991-187.704c4.249 5.159 3.465 12.795-1.745 16.981-28.975 23.283-59.274 47.597-70.929 56.863C336.636 362.283 299.205 400 256 400c-43.452 0-81.287-38.237-103.335-55.86-11.279-8.967-41.744-33.413-70.927-56.865-5.21-4.187-5.993-11.822-1.745-16.981l15.258-18.528c4.178-5.073 11.657-5.843 16.779-1.726 28.618 23.001 58.566 47.035 70.56 56.571C200.143 320.631 232.307 352 256 352c23.602 0 55.246-30.88 73.41-45.389 11.994-9.535 41.944-33.57 70.563-56.568 5.122-4.116 12.601-3.346 16.778 1.727l15.258 18.526z"/>
+                </svg>
+                ${content.openInvitation}
+            `;
+
+            // Update guest greeting with name if present
+            const guestName = getGuestNameFromURL();
+            if (guestName) {
+                document.getElementById('guestGreeting').textContent = `${content.dearGuest} ${guestName}, ${content.inviteText}`;
+            }
+
+            // Update section titles and content
+            document.querySelector('#intro h1').textContent = content.weddingInvitation;
+            document.querySelector('.surah-text').textContent = content.surahText;
+
+            // Update journey section
+            document.querySelector('#journey h2').textContent = content.ourJourney;
+            document.querySelector('#findingCard .card-title').textContent = content.findingEachOther;
+            document.querySelector('#findingCard .card-text').textContent = content.findingText;
+            document.querySelector('#livingCard .card-title').textContent = content.livingRelationship;
+            document.querySelector('#livingCard .card-text').textContent = content.livingText;
+
+            // Update countdown labels
+            document.querySelectorAll('.countdown-label').forEach((label, index) => {
+                const labels = [content.days, content.hours, content.minutes, content.seconds];
+                label.textContent = labels[index];
+            });
+
+            // Update event details
+            document.querySelector('#details h2').textContent = content.eventDetails;
+            document.querySelectorAll('.card-title').forEach(title => {
+                if (title.textContent === 'Date') title.textContent = content.date;
+                if (title.textContent === 'Time') title.textContent = content.time;
+                if (title.textContent === 'Location') title.textContent = content.location;
+            });
+
+            // Update gift section
+            document.querySelector('#gift h2').textContent = content.weddingGift;
+            document.querySelector('#gift > p').textContent = content.giftText;
+            document.querySelector('#groomGiftCard .card-title').textContent = content.groomAccount;
+            document.querySelector('#brideGiftCard .card-title').textContent = content.brideAccount;
+            document.querySelectorAll('.btn-custom').forEach(btn => {
+                if (btn.textContent.includes('Copy')) btn.textContent = content.copyNumber;
+                if (btn.textContent.includes('Get')) btn.textContent = content.getDirections;
+            });
+
+            // Update final message
+            document.querySelector('#social h3').textContent = content.thankYou;
+
+            // Update parents info
+            document.querySelector('#groomContainer .parents-info').textContent = 
+                `${content.sonOf} ${content.mr} Ahmad Pangidoan ${content.and} ${content.mrs} Dewi Sartika`;
+            document.querySelector('#brideContainer .parents-info').textContent = 
+                `${content.daughterOf} ${content.mr} H. Casiman, S.E. ${content.and} ${content.mrs} Hj. Niva Intani, S.Pd`;
+
+            // Update proposal section
+            document.querySelector('#proposal h2').textContent = content.proposalTitle;
+            document.querySelector('#proposal .card-title').textContent = content.proposalSubtitle;
+            document.querySelector('#proposal .card-text').textContent = content.proposalText;
+
+            // Update photos section
+            document.querySelector('#photos h2').textContent = content.ourPhotos;
+
+            // Update dates
+            document.querySelectorAll('.card-text').forEach(text => {
+                if (text.textContent.includes('Sunday, 24 November 2024')) {
+                    text.textContent = content.sundayDate;
+                }
+            });
+        }
+
+        // Modify the existing load event listener
+        window.addEventListener('load', function () {
+            updateGuestGreeting();
+            updateContent(); // Add this line to update content based on language
+            disableScroll();
+            animateInvitation();
+
+            // Reset audio position and ensure it's paused initially
+            backgroundMusic.currentTime = 0;
+            isPlaying = false;
+            musicIcon.src = 'src/play.png';
         });
     </script>
 
 
 </body>
+
 </html>
