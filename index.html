@@ -136,7 +136,7 @@
         .social-icon {
             font-size: 24px;
             color: #f3d6c2;
-            margin: 0 10px;
+            margin-right: 6px;
             transition: all 0.3s ease;
         }
 
@@ -399,6 +399,8 @@
             justify-content: center;
             gap: 20px;
             margin-bottom: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
         }
 
         .countdown-item {
@@ -440,6 +442,19 @@
             height: 100%;
             border-radius: 8px;
         }
+
+        /* Add media query for smaller screens if needed */
+        @media (max-width: 480px) {
+            .countdown-container {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            
+            .countdown-item {
+                min-width: 70px;  /* Smaller minimum width for mobile */
+                padding: 10px;    /* Smaller padding for mobile */
+            }
+        }
     </style>
 </head>
 
@@ -467,7 +482,7 @@
                         <path
                             d="M494.586 164.516c-4.697-3.883-111.723-89.95-135.251-108.657C337.231 38.191 299.437 0 256 0c-43.205 0-80.636 37.717-103.335 55.859-24.463 19.45-131.07 105.195-135.15 108.549A48.004 48.004 0 0 0 0 201.485V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V201.509a48 48 0 0 0-17.414-36.993zM464 458a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6V204.347c0-1.813.816-3.526 2.226-4.665 15.87-12.814 108.793-87.554 132.364-106.293C200.755 78.88 232.398 48 256 48c23.693 0 55.857 31.369 73.41 45.389 23.573 18.741 116.503 93.493 132.366 106.316a5.99 5.99 0 0 1 2.224 4.663V458zm-31.991-187.704c4.249 5.159 3.465 12.795-1.745 16.981-28.975 23.283-59.274 47.597-70.929 56.863C336.636 362.283 299.205 400 256 400c-43.452 0-81.287-38.237-103.335-55.86-11.279-8.967-41.744-33.413-70.927-56.865-5.21-4.187-5.993-11.822-1.745-16.981l15.258-18.528c4.178-5.073 11.657-5.843 16.779-1.726 28.618 23.001 58.566 47.035 70.56 56.571C200.143 320.631 232.307 352 256 352c23.602 0 55.246-30.88 73.41-45.389 11.994-9.535 41.944-33.57 70.563-56.568 5.122-4.116 12.601-3.346 16.778 1.727l15.258 18.526z" />
                     </svg>
-                    Open Invitation
+                    <span id="openInvitationText">Open Invitation</span>
                 </button>
             </div>
         </div>
@@ -477,7 +492,7 @@
                 <h1 class="display-1 pt-5">Wedding Invitation of</h1>
                 <h1 class="display-1 mb-5">Raihan & Isnin</h1>
                 <!-- Add countdown container -->
-                <div class="text-center mb-5 ml-1 mr-1">
+                <div class="text-center mb-5">
                     <div class="countdown-container">
                         <div class="countdown-item">
                             <span id="days">00</span>
@@ -517,8 +532,8 @@
                         </div>
                         <h3 class="mt-3">Raihan Parlaungan</h3>
                         <p class="parents-info">The first son of Ahmad Pangidoan and Dewi Sartika</p>
-                        <button class="btn btn-custom" onclick="window.open('https://www.instagram.com/raihan_parl/', '_blank')">
-                            <img src="./src/ig.png" alt="Instagram" class="social-icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                        <button class="btn btn-custom" onclick="window.open('https://www.instagram.com/raihan_parl/', '_blank')" style="margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                            <img src="./src/ig.png" alt="Instagram" class="social-icon" style="width: 20px; height: 20px; margin-right: 6px;">
                             @raihan_parl
                         </button>
                     </div>
@@ -529,8 +544,8 @@
                         </div>
                         <h3 class="mt-3">Isnin Meiva, S.Pd.</h3>
                         <p class="parents-info">The first daughter of Casiman and Niva Intani</p>
-                        <button class="btn btn-custom" onclick="window.open('https://www.instagram.com/xxmeiva/', '_blank')">
-                            <img src="./src/ig.png" alt="Instagram" class="social-icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                        <button class="btn btn-custom" onclick="window.open('https://www.instagram.com/xxmeiva/', '_blank')" style="margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                            <img src="./src/ig.png" alt="Instagram" class="social-icon" style="width: 20px; height: 20px; margin-right: 6px;">
                             @xxmeiva
                         </button>
                     </div>
@@ -639,7 +654,7 @@
                         </div>
                     </div>
 
-                    <h3 class="text-center mb-4">Resepsi</h3>
+                    <h3 class="text-center mb-4">Wedding Reception</h3>
                     <div class="col-12 mb-4 fade-in" id="resepsiDateCard">
                         <div class="card">
                             <div class="card-body">
@@ -1004,7 +1019,7 @@
         const translations = {
             en: {
                 weddingOf: "The wedding of",
-                inviteText: "We happily invite you to celebrate our love",
+                inviteText: "We cordially invite you to celebrate our love",
                 dearGuest: "Dear",
                 openInvitation: "Open Invitation",
                 weddingInvitation: "Wedding Invitation of",
@@ -1015,10 +1030,9 @@
                 findingEachOther: "Finding Each Other (2022)",
                 findingText: "Being single felt like freedom for us, but fate had other plans. In mid-2022 ✨a magical moment✨ happened. At that time, our mutual friend shared photos when He spent time with each of us, and boom—unexpectedly, we were both interested in getting to know each other.",
                 livingRelationship: "Living the Relationship (2022)",
-                livingText: "After officially getting to know each other and becoming familiar with one another, exactly one month later, we finally met in Bandung City. Feeling that we were a good match, at the end of that meeting, we decided to start a relationship on September 2, 2024, in a long-distance relationship (LDR)",
+                livingText: "After becoming familiar with one another, exactly one month later, we finally met in Bandung City. Feeling that we were a good match, at the end of that meeting, we decided to start a relationship on September 2, 2024, in a long-distance relationship (LDR)🤍",
                 journeyToWedding: "Journey to the Wedding",
                 gettingEngaged: "Getting Engaged & Married (2024)",
-                engagedText: "We have always committed to making time to meet each other every month, eventually, we're doing great with the LDR condition for 2 years, and finally we held our engagement ceremony on September 15, 2024, which concluded with setting the wedding date on November 24, 2024💍",
                 ourPhotos: "Our Photos",
                 eventDetails: "Event Details",
                 days: "Days",
@@ -1044,17 +1058,18 @@
                 sundayDate: "Sunday, 24 November 2024",
                 and: "and",
                 mr: "",
-                mrs: ""
+                mrs: "",
+                coupleNames: "Raihan & Meiva"
             },
             id: {
                 weddingOf: "Pernikahan",
-                inviteText: "We happily invite you to celebrate our love",
-                dearGuest: "Dear",
-                openInvitation: "Open Invitation",
+                inviteText: "Kami mengundang Anda untuk menghadiri acara pernikahan kami",
+                dearGuest: "Yth. Bapak/Ibu/Saudara/i",
+                openInvitation: "Buka Undangan",
                 weddingInvitation: "Wedding Invitation of",
                 surahText: "\"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.\"",
-                firstSonOf: "Putra dari",
-                firstDaughterOf: "Putri dari",
+                firstSonOf: "Anak ke 2 dari",
+                firstDaughterOf: "Anak ke 2dari",
                 ourJourney: "Perjalanan Kami",
                 findingEachOther: "Menemukan Satu Sama Lain (2022)",
                 findingText: "menjadi single adalah sebuah kebebasan bagi kami, namun takdir berkata lain. Di pertengahan tahun 2022 momen ajaib✨ itu datang. \n \n Secara tak sengaja, teman kami membagikan foto saat menghabiskan momen bersama masing-masing dari kami, dan boom tak disangka kami saling tertarik untuk berkenalan satu sama lain👀",
@@ -1062,7 +1077,6 @@
                 livingText: "Usai cukup mengenal, 1 bulan kemudian kami bertemu di Kota Bandung. Merasa cocok satu sama lain, di akhir pertemuan itu kami memutuskan untuk menjalin hubungan LDR sejak tanggal 2 September 2022🤍",
                 journeyToWedding: "Perjalanan Menuju Pernikahan",
                 gettingEngaged: "Bertunangan & Menikah (2024)",
-                engagedText: "Kondisi LDR ternyata tak menjadi halangan bagi hubungan kami, setelah saling berkenalan dengan keluarga masing-masing akhirnya kami melangsungkan acara lamaran pada tanggal 15 September 2024 yang diakhiri dengan penentuan tanggal pernikahan yakni tanggal 24 November 2024💍",
                 ourPhotos: "Foto-foto Kami",
                 eventDetails: "Detail Acara",
                 days: "Hari",
@@ -1080,15 +1094,16 @@
                 brideAccount: "Rekening Mempelai Wanita",
                 copyNumber: "Salin Nomor",
                 thankYou: "Terima kasih telah menjadi bagian dari hari spesial kami!, sampai jumpa!",
-                sonOf: "Putra dari",
-                daughterOf: "Putri dari",
+                sonOf: "Anak ke 2 dari",
+                daughterOf: "Anak ke 2 dari",
                 proposalTitle: "Perjalanan Menuju Pernikahan",
                 proposalSubtitle: "Bertunangan & Menikah (2024)",
-                proposalText: "Kami selalu berkomitmen untuk meluangkan waktu bertemu setiap bulan, akhirnya, kami berhasil menjalani kondisi LDR selama 2 tahun, dan akhirnya kami mengadakan upacara pertunangan pada 15 September 2024, yang diakhiri dengan menetapkan tanggal pernikahan pada 24 November 2024💍",
+                proposalText: "Kondisi LDR ternyata tak menjadi halangan bagi hubungan kami, setelah saling berkenalan dengan keluarga masing-masing akhirnya kami melangsungkan acara lamaran pada tanggal 15 September 2024 yang diakhiri dengan penentuan tanggal pernikahan yakni tanggal 24 November 2024💍",
                 sundayDate: "Minggu, 24 November 2024",
                 and: "dan",
                 mr: "Bapak",
-                mrs: "Ibu"
+                mrs: "Ibu",
+                coupleNames: "Raihan & Isnin"
             }
         };
 
@@ -1100,23 +1115,25 @@
         function updateContent() {
             const language = getLanguageFromURL();
             const content = translations[language] || translations.en;
-
-            // Update only non-title content
-            document.getElementById('guestGreeting').textContent = content.inviteText;
-            document.getElementById('openInvitationBtn').innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path d="M494.586 164.516c-4.697-3.883-111.723-89.95-135.251-108.657C337.231 38.191 299.437 0 256 0c-43.205 0-80.636 37.717-103.335 55.859-24.463 19.45-131.07 105.195-135.15 108.549A48.004 48.004 0 0 0 0 201.485V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V201.509a48 48 0 0 0-17.414-36.993zM464 458a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6V204.347c0-1.813.816-3.526 2.226-4.665 15.87-12.814 108.793-87.554 132.364-106.293C200.755 78.88 232.398 48 256 48c23.693 0 55.857 31.369 73.41 45.389 23.573 18.741 116.503 93.493 132.366 106.316a5.99 5.99 0 0 1 2.224 4.663V458zm-31.991-187.704c4.249 5.159 3.465 12.795-1.745 16.981-28.975 23.283-59.274 47.597-70.929 56.863C336.636 362.283 299.205 400 256 400c-43.452 0-81.287-38.237-103.335-55.86-11.279-8.967-41.744-33.413-70.927-56.865-5.21-4.187-5.993-11.822-1.745-16.981l15.258-18.528c4.178-5.073 11.657-5.843 16.779-1.726 28.618 23.001 58.566 47.035 70.56 56.571C200.143 320.631 232.307 352 256 352c23.602 0 55.246-30.88 73.41-45.389 11.994-9.535 41.944-33.57 70.563-56.568 5.122-4.116 12.601-3.346 16.778 1.727l15.258 18.526z"/>
-                </svg>
-                ${content.openInvitation}
-            `;
+            const guestName = getGuestNameFromURL();
 
             // Update guest greeting with name if present
-            const guestName = getGuestNameFromURL();
             if (guestName) {
-                document.getElementById('guestGreeting').textContent = `${content.dearGuest} ${guestName}, ${content.inviteText}`;
+                document.getElementById('guestGreeting').textContent = language === 'id' 
+                    ? `Yth. Bapak/Ibu/Saudara/i ${guestName}, ${content.inviteText}`
+                    : `${content.dearGuest} ${guestName}, ${content.inviteText}`;
+            } else {
+                document.getElementById('guestGreeting').textContent = content.inviteText;
             }
 
-            // Update content text only, not titles
+            // Update couple names in all locations
+            document.querySelector('.open-invitation-text:nth-child(2)').textContent = content.coupleNames;
+            document.querySelector('#intro .display-1:nth-child(2)').textContent = content.coupleNames;
+            document.title = language === 'id' ? 
+                "Raihan & Isnin's Wedding Invitation" : 
+                "Raihan & Meiva's Wedding Invitation";
+
+            // Update only non-title content
             document.querySelector('.surah-text').textContent = content.surahText;
             document.querySelector('#findingCard .card-text').textContent = content.findingText;
             document.querySelector('#livingCard .card-text').textContent = content.livingText;
@@ -1135,19 +1152,40 @@
 
             // Update parents info
             document.querySelector('#groomContainer .parents-info').textContent = 
-                `${content.sonOf} ${content.mr} Ahmad Pangidoan ${content.and} ${content.mrs} Dewi Sartika`;
+                `${content.sonOf} ${content.mr} H. Ahmad Pangidoan ${content.and} ${content.mrs} Dewi Sartika`;
             document.querySelector('#brideContainer .parents-info').textContent = 
                 `${content.daughterOf} ${content.mr} H. Casiman, S.E. ${content.and} ${content.mrs} Hj. Niva Intani, S.Pd`;
 
             // Update proposal text (not title)
             document.querySelector('#proposal .card-text').textContent = content.proposalText;
 
-            // Update dates
+            // Update dates and times
             document.querySelectorAll('.card-text').forEach(text => {
                 if (text.textContent.includes('Sunday, 24 November 2024')) {
                     text.textContent = content.sundayDate;
                 }
+                // Add time format conversion
+                if (text.textContent.trim() === '8:00 AM') {
+                    text.textContent = language === 'id' ? '08:00 WIB' : '8:00 AM';
+                }
+                if (text.textContent.trim() === '10:00 AM') {
+                    text.textContent = language === 'id' ? '10:00 WIB' : '10:00 AM';
+                }
             });
+
+            // Update date and time card titles
+            document.querySelectorAll('.card-title').forEach(title => {
+                if (title.textContent.trim() === 'Date') {
+                    title.textContent = content.date;
+                }
+                if (title.textContent.trim() === 'Time') {
+                    title.textContent = content.time;
+                }
+            });
+
+            // Update Open Invitation button text
+            document.getElementById('openInvitationText').textContent = 
+                language === 'id' ? 'Buka Undangan' : 'Open Invitation';
         }
 
         // Modify the existing load event listener
