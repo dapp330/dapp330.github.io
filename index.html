@@ -5,7 +5,7 @@
     <link rel="icon" href="./src/love-letter.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raihan & Meiva's Wedding Invitation</title>
+    <title>Raihan & Isnin's Wedding Invitation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Add this line to include the Google Fonts -->
     <link
@@ -32,8 +32,8 @@
             width: 100%;
             max-width: 480px;
             min-height: 100vh;
-            background-image: url('./src/background.jpg');
-            /* background-color: rgba(255, 245, 245, 0.95); */
+            /* background-image: url('./src/background.jpg'); */
+            background-color: rgba(255, 245, 245, 0.95);
             /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
             overflow-y: auto;
         }
@@ -458,7 +458,7 @@
         <div class="open-invitation" id="openInvitation">
             <div class="open-invitation-content">
                 <h1 class="open-invitation-text">The wedding of</h1>
-                <h1 class="open-invitation-text">Raihan & Meiva</h1>
+                <h1 class="open-invitation-text">Raihan & Isnin</h1>
             </div>
             <div class="open-invitation-footer">
                 <p id="guestGreeting" class="fade-in">We cordially invite you to celebrate our love</p>
@@ -475,7 +475,28 @@
         <div class="container-fluid d-none" id="invitation">
             <section id="intro" class="section text-center">
                 <h1 class="display-1 pt-5">Wedding Invitation of</h1>
-                <h1 class="display-1 mb-5">Raihan & Meiva </h1>
+                <h1 class="display-1 mb-5">Raihan & Isnin</h1>
+                <!-- Add countdown container -->
+                <div class="text-center mb-5 ml-1 mr-1">
+                    <div class="countdown-container">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="arabic-text">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنُسِكُمْ أَزْوَاجًا لِّتسْكُنُوا
                     إِلَيْهَا </div>
                 <div class="arabic-text mb-5 "> وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ
@@ -496,10 +517,10 @@
                         </div>
                         <h3 class="mt-3">Raihan Parlaungan</h3>
                         <p class="parents-info">The first son of Ahmad Pangidoan and Dewi Sartika</p>
-                        <a href="https://www.instagram.com/raihan_parl/" target="_blank" class="social-link">
-                            <img src="./src/ig.png" alt="Instagram" class="social-icon">
+                        <button class="btn btn-custom" onclick="window.open('https://www.instagram.com/raihan_parl/', '_blank')">
+                            <img src="./src/ig.png" alt="Instagram" class="social-icon" style="width: 20px; height: 20px; margin-right: 10px;">
                             @raihan_parl
-                        </a>
+                        </button>
                     </div>
                     <div class="col-md-6 text-center mb-4 fade-in" id="brideContainer">
                         <div class="image-container">
@@ -508,10 +529,10 @@
                         </div>
                         <h3 class="mt-3">Isnin Meiva, S.Pd.</h3>
                         <p class="parents-info">The first daughter of Casiman and Niva Intani</p>
-                        <a href="https://www.instagram.com/xxmeiva/" target="_blank" class="social-link">
-                            <img src="./src/ig.png" alt="Instagram" class="social-icon">
+                        <button class="btn btn-custom" onclick="window.open('https://www.instagram.com/xxmeiva/', '_blank')">
+                            <img src="./src/ig.png" alt="Instagram" class="social-icon" style="width: 20px; height: 20px; margin-right: 10px;">
                             @xxmeiva
-                        </a>
+                        </button>
                     </div>
                 </div>
             </section>
@@ -597,27 +618,7 @@
 
             <section id="details" class="section">
                 <h2 class="text-center mb-5">Event Details</h2>
-                <!-- Add countdown container -->
-                <div class="text-center mb-5 ml-1 mr-1">
-                    <div class="countdown-container">
-                        <div class="countdown-item">
-                            <span id="days">00</span>
-                            <span class="countdown-label">Days</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="hours">00</span>
-                            <span class="countdown-label">Hours</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="minutes">00</span>
-                            <span class="countdown-label">Minutes</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="seconds">00</span>
-                            <span class="countdown-label">Seconds</span>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="row justify-content-center">
                     <!-- Event Times Section -->
                     <h3 class="text-center mb-4">Akad Nikah</h3>
@@ -1047,21 +1048,21 @@
             },
             id: {
                 weddingOf: "Pernikahan",
-                inviteText: "Kami mengundang Anda untuk merayakan cinta kami",
-                dearGuest: "Kepada",
-                openInvitation: "Buka Undangan",
-                weddingInvitation: "Undangan Pernikahan",
+                inviteText: "We happily invite you to celebrate our love",
+                dearGuest: "Dear",
+                openInvitation: "Open Invitation",
+                weddingInvitation: "Wedding Invitation of",
                 surahText: "\"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.\"",
                 firstSonOf: "Putra dari",
                 firstDaughterOf: "Putri dari",
                 ourJourney: "Perjalanan Kami",
                 findingEachOther: "Menemukan Satu Sama Lain (2022)",
-                findingText: "Menjadi single terasa seperti kebebasan bagi kami, namun takdir memiliki rencana lain. Pada pertengahan 2022 ✨momen ajaib✨ terjadi. Saat itu, teman kami membagikan foto saat dia menghabiskan waktu dengan kami masing-masing, dan boom—tak disangka, kami berdua tertarik untuk saling mengenal.",
+                findingText: "menjadi single adalah sebuah kebebasan bagi kami, namun takdir berkata lain. Di pertengahan tahun 2022 momen ajaib✨ itu datang. \n \n Secara tak sengaja, teman kami membagikan foto saat menghabiskan momen bersama masing-masing dari kami, dan boom tak disangka kami saling tertarik untuk berkenalan satu sama lain👀",
                 livingRelationship: "Menjalani Hubungan (2022)",
-                livingText: "Setelah resmi saling mengenal dan menjadi akrab satu sama lain, tepat sebulan kemudian, kami akhirnya bertemu di Kota Bandung. Merasa bahwa kami cocok, di akhir pertemuan itu, kami memutuskan untuk memulai hubungan pada 2 September 2024, dalam hubungan jarak jauh (LDR)",
+                livingText: "Usai cukup mengenal, 1 bulan kemudian kami bertemu di Kota Bandung. Merasa cocok satu sama lain, di akhir pertemuan itu kami memutuskan untuk menjalin hubungan LDR sejak tanggal 2 September 2022🤍",
                 journeyToWedding: "Perjalanan Menuju Pernikahan",
                 gettingEngaged: "Bertunangan & Menikah (2024)",
-                engagedText: "Kami selalu berkomitmen untuk meluangkan waktu bertemu setiap bulan, akhirnya, kami berhasil menjalani kondisi LDR selama 2 tahun, dan akhirnya kami mengadakan upacara pertunangan pada 15 September 2024, yang diakhiri dengan menetapkan tanggal pernikahan pada 24 November 2024💍",
+                engagedText: "Kondisi LDR ternyata tak menjadi halangan bagi hubungan kami, setelah saling berkenalan dengan keluarga masing-masing akhirnya kami melangsungkan acara lamaran pada tanggal 15 September 2024 yang diakhiri dengan penentuan tanggal pernikahan yakni tanggal 24 November 2024💍",
                 ourPhotos: "Foto-foto Kami",
                 eventDetails: "Detail Acara",
                 days: "Hari",
@@ -1100,8 +1101,7 @@
             const language = getLanguageFromURL();
             const content = translations[language] || translations.en;
 
-            // Update all text content
-            document.querySelector('.open-invitation-text').textContent = content.weddingOf;
+            // Update only non-title content
             document.getElementById('guestGreeting').textContent = content.inviteText;
             document.getElementById('openInvitationBtn').innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -1116,15 +1116,9 @@
                 document.getElementById('guestGreeting').textContent = `${content.dearGuest} ${guestName}, ${content.inviteText}`;
             }
 
-            // Update section titles and content
-            document.querySelector('#intro h1').textContent = content.weddingInvitation;
+            // Update content text only, not titles
             document.querySelector('.surah-text').textContent = content.surahText;
-
-            // Update journey section
-            document.querySelector('#journey h2').textContent = content.ourJourney;
-            document.querySelector('#findingCard .card-title').textContent = content.findingEachOther;
             document.querySelector('#findingCard .card-text').textContent = content.findingText;
-            document.querySelector('#livingCard .card-title').textContent = content.livingRelationship;
             document.querySelector('#livingCard .card-text').textContent = content.livingText;
 
             // Update countdown labels
@@ -1133,23 +1127,8 @@
                 label.textContent = labels[index];
             });
 
-            // Update event details
-            document.querySelector('#details h2').textContent = content.eventDetails;
-            document.querySelectorAll('.card-title').forEach(title => {
-                if (title.textContent === 'Date') title.textContent = content.date;
-                if (title.textContent === 'Time') title.textContent = content.time;
-                if (title.textContent === 'Location') title.textContent = content.location;
-            });
-
-            // Update gift section
-            document.querySelector('#gift h2').textContent = content.weddingGift;
+            // Update gift section content (not titles)
             document.querySelector('#gift > p').textContent = content.giftText;
-            document.querySelector('#groomGiftCard .card-title').textContent = content.groomAccount;
-            document.querySelector('#brideGiftCard .card-title').textContent = content.brideAccount;
-            document.querySelectorAll('.btn-custom').forEach(btn => {
-                if (btn.textContent.includes('Copy')) btn.textContent = content.copyNumber;
-                if (btn.textContent.includes('Get')) btn.textContent = content.getDirections;
-            });
 
             // Update final message
             document.querySelector('#social h3').textContent = content.thankYou;
@@ -1160,13 +1139,8 @@
             document.querySelector('#brideContainer .parents-info').textContent = 
                 `${content.daughterOf} ${content.mr} H. Casiman, S.E. ${content.and} ${content.mrs} Hj. Niva Intani, S.Pd`;
 
-            // Update proposal section
-            document.querySelector('#proposal h2').textContent = content.proposalTitle;
-            document.querySelector('#proposal .card-title').textContent = content.proposalSubtitle;
+            // Update proposal text (not title)
             document.querySelector('#proposal .card-text').textContent = content.proposalText;
-
-            // Update photos section
-            document.querySelector('#photos h2').textContent = content.ourPhotos;
 
             // Update dates
             document.querySelectorAll('.card-text').forEach(text => {
