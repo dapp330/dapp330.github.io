@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Message Generator</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #2a2a2a;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            background-color: transparent;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.5rem 2rem;
+            border-radius: 5px;
+            float: right;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: white;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label for="name">name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="phone">phone number(use +62)</label>
+            <input type="text" id="phone" name="phone">
+        </div>
+        <button onclick="generateMessage()">send</button>
+    </div>
+
+    <script>
+        function generateMessage() {
+            let name = document.getElementById('name').value;
+            name = name.replace(/\s+/g, "%2B");
+            let phone = document.getElementById('phone').value;
+
+            // Format phone number if needed
+            if (phone.startsWith('0')) {
+                phone = '+62' + phone.substring(1);
+            }
+
+            // Base message template
+            const messageTemplate = `https://api.whatsapp.com/send/?phone=${phone}&text=Assalamualaikum%20Warahmatullahi%20Wabarakatuh%0A%0ADengan%20segala%20hormat,%20kami%20bermaksud%20mengundang%20Bapak/Ibu/Saudara/i%20untuk%20menghadiri%20acara%20pernikahan%20kami%20yang%20akan%20dilaksanakan,%20antara:%0A%0A🤵🏻%20Mohammad%20Raihan%20Parlaungan%0A%0A%20%20%20%20%20%20%20Dan%0A%0A👰🏻‍♀%20Isnin%20Meiva%0A%0AMerupakan%20suatu%20kehormatan%20dan%20kebahagiaan%20bagi%20kami%20apabila%20Bapak/Ibu/Saudara/i%20berkenan%20hadir%20dan%20memberikan%20doa%20restu%20bagi%20kami%20berdua.%0A%0AUntuk%20informasi%20lebih%20lengkap%20mengenai%20acara,%20silakan%20kunjungi%20link%20berikut:%0A%0Ahttps://meiva.raihanparl.com/?guest=${name}%0A%0A%0AAtas%20perhatian,%20kehadiran,%20dan%20doa%20restunya,%20kami%20sampaikan%20terima%20kasih%20yang%20sebesar-besarnya.%0A%0AWassalamualaikum%20Warahmatullahi%20Wabarakatuh%0A%0AHormat%20kami,%0ARaihan%20Parlaungan%0AIsnin%20Meiva&type=phone_number&app_absent=0`;
+
+            // Open WhatsApp with the generated message
+            window.open(messageTemplate, '_blank');
+        }
+    </script>
+</body>
+</html> 
