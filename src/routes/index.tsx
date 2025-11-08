@@ -6,7 +6,11 @@ import StatsBlock from '../components/StatsBlock'
 import ContactForm from '../components/ContactForm'
 import Footer from '../components/Footer'
 
-export const Route = createFileRoute('/')({ component: App })
+export const Route = createFileRoute('/')({
+  component: App,
+  // Disable SSR for static hosting
+  ssr: false,
+})
 
 function App() {
   // IntersectionObserver for scroll animations
