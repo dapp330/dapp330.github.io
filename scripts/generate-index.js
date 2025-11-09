@@ -1,11 +1,36 @@
-import { readdir, writeFile } from 'fs/promises'
+import { readdir, writeFile, readFile, access } from 'fs/promises'
 import { join } from 'path'
+import { constants } from 'fs'
 
 const publicDir = join(process.cwd(), '.output/public')
 const assetsDir = join(publicDir, 'assets')
+const indexPath = join(publicDir, 'index.html')
+
+async function fileExists(path) {
+  try {
+    await access(path, constants.F_OK)
+    return true
+  } catch {
+    return false
+  }
+}
 
 async function generateIndex() {
   try {
+    // Check if Nitro already generated an index.html (prerendered)
+    const exists = await fileExists(indexPath)
+    if (exists) {
+      const existing = await readFile(indexPath, 'utf-8')
+      // If it's a full HTML document (not just our minimal shell), use it
+      if (existing.includes('<body') && existing.length > 500) {
+        console.log('✓ Using prerendered index.html from Nitro')
+        // Still create 404.html for SPA routing
+        await writeFile(join(publicDir, '404.html'), existing)
+        console.log('✓ Generated 404.html for SPA routing')
+        return
+      }
+    }
+
     // Find the main JS and CSS files
     const files = await readdir(assetsDir)
     const mainJs = files.find(f => f.startsWith('main-') && f.endsWith('.js'))
@@ -31,8 +56,8 @@ async function generateIndex() {
 </body>
 </html>`
 
-    await writeFile(join(publicDir, 'index.html'), html)
-    // Also create 404.html for GitHub Pages SPA routing
+    await writeFile(indexPath, html)
+    // Also create 404.html for SPA routing
     await writeFile(join(publicDir, '404.html'), html)
     console.log('✓ Generated index.html and 404.html')
   } catch (error) {
