@@ -71,7 +71,7 @@ function App() {
               </h1>
               <p className="text-lg text-text-muted mb-8 leading-relaxed max-w-xl">
                 Golden Tech helps fast-growing companies design, build, and scale
-                reliable backends, data platforms, and AI systems — without
+                reliable backends, data platforms, and AI systems , without
                 compromising on quality or uptime.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -160,7 +160,7 @@ function App() {
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
               title="Scalable Backend Architecture"
-              description="We design APIs and services that stay fast and reliable as your traffic grows — from your first thousand users to millions."
+              description="We design APIs and services that stay fast and reliable as your traffic grows , from your first thousand users to millions."
               bullets={[
                 'Event-driven & message-based systems',
                 'Performance profiling & bottleneck removal',
@@ -206,37 +206,42 @@ function App() {
 
           <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
             <PortfolioCard
-              name="Aurora Transit Intelligence"
-              tagline="Real-time operations dashboard for a city-scale transit network."
-              description="We built a real-time control and analytics layer on top of live vehicle telemetry, schedules, and incident feeds — giving operators a unified view of network reliability."
+              name="Danke Adventure"
+              tagline="Complete tour booking and voucher management platform."
+              description="A comprehensive travel platform that streamlines tour bookings with automated WhatsApp notifications, integrated voucher purchases via Xendit payment gateway, and a full admin dashboard for managing vouchers and tracking customer transactions."
               keyPoints={[
-                'Sub-second latency for live vehicle positions',
-                'Headway and on-time performance analytics',
-                'Alerting for service gaps and congestion',
+                'Automated WhatsApp booking confirmations',
+                'Xendit payment integration for voucher purchases',
+                'Email delivery of vouchers to customers',
+                'Admin CRUD for vouchers and purchase history',
+                'Voucher validation and redemption tracking',
               ]}
-              techStack="Stack: Go, PostgreSQL/Timescale, MQTT, Redis, React."
+              websiteUrl="https://dankeadventure.com"
             />
             <PortfolioCard
-              name="Nimbus Commerce Cloud"
-              tagline="Scalable backend for a high-growth e-commerce platform."
-              description="We re-architected the core order and inventory services to handle flash-sale traffic without downtime, while keeping the developer experience smooth."
+              name="Growthverse"
+              tagline="Event management platform with attendance tracking and gamification."
+              description="An event management system that enables admins to create event classes, manage speakers and participants, and track attendance through barcode scanning. Features a point-based gamification system rewarding registration and attendance."
               keyPoints={[
-                'Event-driven order processing pipeline',
-                'Blue/green deploys and zero-downtime releases',
-                'End-to-end observability with tracing and metrics',
+                'Event class creation with speaker and capacity management',
+                'Zoom/Google Meet integration and downloadable materials',
+                'Barcode-based attendance scanning system',
+                'Point system: help tracking engagement and participation',
               ]}
-              techStack="Stack: Node.js, Kafka, PostgreSQL, Kubernetes, Grafana."
+              websiteUrl="https://growthverse.id"
             />
             <PortfolioCard
-              name="Helios AI Control Panel"
-              tagline="Operational console for AI-powered customer support."
-              description="We built a management console that lets ops teams tune AI behavior, review conversations, and track resolution metrics in one place."
+              name="Eplusale"
+              tagline="Inventory and supply chain management for multi-branch operations."
+              description="A point-of-sale and inventory management system connecting warehouses to restaurant and coffee shop branches. Enables branch managers to order raw materials, while warehouse admins track inventory flow, revenue, profits, and analyze ordering patterns."
               keyPoints={[
-                'Human-in-the-loop review workflow',
-                'Fine-grained configuration of AI assistants',
-                'Analytics on response quality and cost',
+                'Multi-branch restocking and order management',
+                'Real-time inventory tracking across locations',
+                'Revenue and profit analytics for warehouse operations',
+                'Most ordered items and demand forecasting',
+                'Centralized warehouse control with branch autonomy',
               ]}
-              techStack="Stack: Python, FastAPI, vector search, React, Tailwind."
+              websiteUrl="https://eplussales.com"
             />
           </div>
         </div>
@@ -259,7 +264,7 @@ function App() {
               <p className="text-lg text-text-muted leading-relaxed">
                 We're engineers first, consultants second. Golden Tech was created
                 for teams that need a hands-on partner who can design the
-                architecture, write the code, and ship the thing — not just hand
+                architecture, write the code, and ship the thing , not just hand
                 over a slide deck.
               </p>
               <p className="text-lg text-text-muted leading-relaxed">
@@ -284,7 +289,7 @@ function App() {
                   },
                   {
                     number: 'From PoC to production',
-                    label: 'We help you go from idea to launch — and beyond.',
+                    label: 'We help you go from idea to launch , and beyond.',
                   },
                 ]}
               />
@@ -301,11 +306,10 @@ function App() {
         <div className="max-w-3xl mx-auto">
           <div className="bg-bg-primary border-t-2 border-gold rounded-lg p-8 md:p-12 shadow-2xl animate-on-scroll">
             <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-              Tell us about your next project.
+              Tell us about your problem, we'll help you solve it.
             </h2>
             <p className="text-lg text-text-muted mb-8 leading-relaxed">
-              Share a bit about your product, stack, and timeline. We'll get back
-              to you with practical options — not generic advice.
+              Share a bit about your problem, we'll get back to you with practical solutions.
             </p>
 
             <ContactForm />

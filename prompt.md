@@ -88,7 +88,7 @@ Left side:
   - “Bold infrastructure.
      Golden reliability.”
 - Subheading paragraph:
-  - “Golden Tech helps fast-growing companies design, build, and scale reliable backends, data platforms, and AI systems — without compromising on quality or uptime.”
+  - “Golden Tech helps fast-growing companies design, build, and scale reliable backends, data platforms, and AI systems  without compromising on quality or uptime.”
 - Primary CTA button:
   - Label: “Schedule a consultation”
   - Gold background, dark text, hover darken to `#E6B800`.
@@ -118,7 +118,7 @@ Animation:
 Service card 1:
 - Title: “Scalable Backend Architecture”
 - Description:
-  “We design APIs and services that stay fast and reliable as your traffic grows — from your first thousand users to millions.”
+  “We design APIs and services that stay fast and reliable as your traffic grows  from your first thousand users to millions.”
 - Bullet points:
   - “Event-driven & message-based systems”
   - “Performance profiling & bottleneck removal”
@@ -158,7 +158,7 @@ Portfolio item 1:
 - Name: “Aurora Transit Intelligence”
 - Tagline: “Real-time operations dashboard for a city-scale transit network.”
 - Description:
-  “We built a real-time control and analytics layer on top of live vehicle telemetry, schedules, and incident feeds — giving operators a unified view of network reliability.”
+  “We built a real-time control and analytics layer on top of live vehicle telemetry, schedules, and incident feeds  giving operators a unified view of network reliability.”
 - Key points (list):
   - “Sub-second latency for live vehicle positions”
   - “Headway and on-time performance analytics”
@@ -202,7 +202,7 @@ Styling & animation:
 
 Left column (text):
 - Paragraph 1:
-  “We’re engineers first, consultants second. Golden Tech was created for teams that need a hands-on partner who can design the architecture, write the code, and ship the thing — not just hand over a slide deck.”
+  “We’re engineers first, consultants second. Golden Tech was created for teams that need a hands-on partner who can design the architecture, write the code, and ship the thing  not just hand over a slide deck.”
 - Paragraph 2:
   “We focus on a small number of engagements at a time so we can go deep on your stack, infrastructure, and team, and leave you with systems that are documented, observable, and ready to grow.”
 
@@ -213,7 +213,7 @@ Right column (stats block):
   2) “99.9%+ uptime”
      - “Architectures engineered for reliability and recovery.”
   3) “From PoC to production”
-     - “We help you go from idea to launch — and beyond.”
+     - “We help you go from idea to launch  and beyond.”
 
 Animation:
 - Section heading and text fade in.
@@ -224,7 +224,7 @@ Animation:
 - Heading:
   - “Tell us about your next project.”
 - Paragraph:
-  - “Share a bit about your product, stack, and timeline. We’ll get back to you with practical options — not generic advice.”
+  - “Share a bit about your product, stack, and timeline. We’ll get back to you with practical options  not generic advice.”
 - Simple contact form:
   - Name (input)
   - Work email (input)
