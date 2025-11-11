@@ -226,7 +226,7 @@
     if (rootEl) {
       rootEl.innerHTML = `
         <div style="padding: 2rem; text-align: center; color: #e5e5e5; background: #0a0a0a; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; font-family: system-ui, sans-serif;">
-          <h1 style="color: #FFD700; margin-bottom: 1rem;">Golden Tech</h1>
+          <h1 style="color: #FFD700; margin-bottom: 1rem;">Lumina Kreasi Technology</h1>
           <p style="margin-bottom: 1rem;">Failed to load application.</p>
           <details style="background: #1c1c1e; padding: 1rem; border-radius: 0.5rem; text-align: left; max-width: 600px; margin-top: 1rem;">
             <summary style="cursor: pointer; margin-bottom: 0.5rem; color: #FFD700;">Error details</summary>

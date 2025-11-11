@@ -20,11 +20,11 @@ export default function PortfolioCard({
   return (
     <div className="bg-bg-secondary border border-border rounded-lg overflow-hidden hover:scale-[1.01] hover:border-t-2 hover:border-t-gold transition-all duration-300 animate-on-scroll">
       {imageUrl && (
-        <div className="w-full h-48 bg-bg-primary overflow-hidden">
+        <div className="w-full h-40 bg-bg-primary overflow-hidden flex items-center justify-center p-6">
           <img
             src={imageUrl}
             alt={name}
-            className="w-full h-full object-cover"
+            className="max-w-full max-h-full object-contain"
           />
         </div>
       )}

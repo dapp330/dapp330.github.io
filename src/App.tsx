@@ -5,6 +5,7 @@ import PortfolioCard from './components/PortfolioCard'
 import StatsBlock from './components/StatsBlock'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
+import ComingSoon from './components/ComingSoon'
 
 function App() {
   // IntersectionObserver for scroll animations
@@ -70,7 +71,7 @@ function App() {
                 Golden reliability.
               </h1>
               <p className="text-lg text-text-muted mb-8 leading-relaxed max-w-xl">
-                Golden Tech helps fast-growing companies design, build, and scale
+                Lumina Kreasi Technology helps fast-growing companies design, build, and scale
                 reliable backends, data platforms, and AI systems , without
                 compromising on quality or uptime.
               </p>
@@ -141,6 +142,7 @@ function App() {
           </div>
         </div>
       </section>
+
 
       {/* Services Section */}
       <section
@@ -216,36 +218,38 @@ function App() {
                 'Admin CRUD for vouchers and purchase history',
                 'Voucher validation and redemption tracking',
               ]}
-              websiteUrl="https://dankeadventure.com"
+              imageUrl="/danke.png"
             />
             <PortfolioCard
               name="Growthverse"
               tagline="Event management platform with attendance tracking and gamification."
               description="An event management system that enables admins to create event classes, manage speakers and participants, and track attendance through barcode scanning. Features a point-based gamification system rewarding registration and attendance."
               keyPoints={[
-                'Event class creation with speaker and capacity management',
+                'Serving 6,830 registered users with 159 available classes',
                 'Zoom/Google Meet integration and downloadable materials',
                 'Barcode-based attendance scanning system',
-                'Point system: help tracking engagement and participation',
+                'Point system tracking engagement with an average of 380 active users per day',
               ]}
-              websiteUrl="https://growthverse.id"
+              imageUrl="/growthverse.png"
             />
             <PortfolioCard
               name="Eplusale"
               tagline="Inventory and supply chain management for multi-branch operations."
               description="A point-of-sale and inventory management system connecting warehouses to restaurant and coffee shop branches. Enables branch managers to order raw materials, while warehouse admins track inventory flow, revenue, profits, and analyze ordering patterns."
               keyPoints={[
-                'Multi-branch restocking and order management',
-                'Real-time inventory tracking across locations',
-                'Revenue and profit analytics for warehouse operations',
-                'Most ordered items and demand forecasting',
-                'Centralized warehouse control with branch autonomy',
+                'Managing inventory across 20 branches with seamless restocking and order management',
+                'Real-time inventory tracking processing 1,224 total transactions',
+                'Revenue and profit analytics tracking 54,824 items sold',
+                'Processing an average of 6 transactions per month per branch',
               ]}
-              websiteUrl="https://eplussales.com"
+              imageUrl="/eplussale.png"
             />
           </div>
         </div>
       </section>
+
+      {/* Coming Soon Section */}
+      <ComingSoon />
 
       {/* About Section */}
       <section
@@ -255,14 +259,14 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-on-scroll">
             <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-              Why Golden Tech?
+              Why Lumina Kreasi Technology?
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6 animate-on-scroll">
               <p className="text-lg text-text-muted leading-relaxed">
-                We're engineers first, consultants second. Golden Tech was created
+                We're engineers first, consultants second. Lumina Kreasi Technology was created
                 for teams that need a hands-on partner who can design the
                 architecture, write the code, and ship the thing , not just hand
                 over a slide deck.
@@ -278,14 +282,13 @@ function App() {
               <StatsBlock
                 stats={[
                   {
-                    number: '5+ years',
-                    label:
-                      'Hands-on experience building and scaling production systems.',
-                  },
-                  {
                     number: '99.9%+ uptime',
                     label:
                       'Architectures engineered for reliability and recovery.',
+                  },
+                  {
+                    number: 'Built for growth',
+                    label: 'Designed with scalability and clean architecture in mind.',
                   },
                   {
                     number: 'From PoC to production',

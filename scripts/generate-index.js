@@ -46,7 +46,7 @@ async function generateIndex() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Tech - Premium Engineering Partner</title>
+  <title>Lumina Kreasi Technology - Premium Engineering Partner</title>
   ${stylesCss ? `<link rel="stylesheet" href="/assets/${stylesCss}">` : ''}
 </head>
 <body>

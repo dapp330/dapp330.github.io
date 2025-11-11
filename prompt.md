@@ -9,7 +9,7 @@ Do NOT reinstall TanStack Start.
 Work within the existing setup.
 
 Goal:
-Build a production-ready marketing site for a tech company called **“Golden Tech”** with:
+Build a production-ready marketing site for a tech company called **“Lumina Kreasi Technology”** with:
 - Classy, premium, Apple-inspired design
 - Dark theme with gold accents
 - Subtle, non-flashy animations (no “extra” effects)
@@ -64,7 +64,7 @@ Sections & content (please wire in this content):
 
 1) HEADER / NAVBAR
 - Sticky top bar with semi-transparent dark background.
-- Left: wordmark “Golden Tech”
+- Left: wordmark “Lumina Kreasi Technology”
   - “Golden” in gold (`#FFD700`)
   - “Tech” in light text (`#E5E5E5`)
 - Right: nav links with smooth scroll to section IDs:
@@ -88,7 +88,7 @@ Left side:
   - “Bold infrastructure.
      Golden reliability.”
 - Subheading paragraph:
-  - “Golden Tech helps fast-growing companies design, build, and scale reliable backends, data platforms, and AI systems  without compromising on quality or uptime.”
+  - “Lumina Kreasi Technology helps fast-growing companies design, build, and scale reliable backends, data platforms, and AI systems  without compromising on quality or uptime.”
 - Primary CTA button:
   - Label: “Schedule a consultation”
   - Gold background, dark text, hover darken to `#E6B800`.
@@ -197,12 +197,12 @@ Styling & animation:
 
 5) ABOUT SECTION (id="about")
 - Title:
-  - “Why Golden Tech?”
+  - “Why Lumina Kreasi Technology?”
 - Two-column layout on desktop; stacked on mobile.
 
 Left column (text):
 - Paragraph 1:
-  “We’re engineers first, consultants second. Golden Tech was created for teams that need a hands-on partner who can design the architecture, write the code, and ship the thing  not just hand over a slide deck.”
+  “We’re engineers first, consultants second. Lumina Kreasi Technology was created for teams that need a hands-on partner who can design the architecture, write the code, and ship the thing  not just hand over a slide deck.”
 - Paragraph 2:
   “We focus on a small number of engagements at a time so we can go deep on your stack, infrastructure, and team, and leave you with systems that are documented, observable, and ready to grow.”
 
@@ -238,7 +238,7 @@ Animation:
 
 Footer:
 - Simple, minimal footer with:
-  - “© {currentYear} Golden Tech. All rights reserved.”
+  - “© {currentYear} Lumina Kreasi Technology. All rights reserved.”
   - Optional small link row (e.g. Privacy, Terms).
 
 General requirements:

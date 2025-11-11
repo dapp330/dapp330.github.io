@@ -15,7 +15,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Golden Tech - Premium Engineering Partner',
+        title: 'Lumina Kreasi Technology - Premium Engineering Partner',
       },
     ],
     links: [
