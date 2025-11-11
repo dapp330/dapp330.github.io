@@ -31,8 +31,8 @@ export default function Header() {
           className="text-2xl font-bold cursor-pointer"
           onClick={() => scrollToSection('home')}
         >
-          <span className="text-gold">Golden</span>{' '}
-          <span className="text-text-primary">Tech</span>
+          <span className="text-gold">Lumina Kreasi</span>{' '}
+          <span className="text-text-primary">Technology</span>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
